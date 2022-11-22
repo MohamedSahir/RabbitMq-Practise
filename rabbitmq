@@ -1,1 +1,29 @@
 https://stackoverflow.com/questions/11459676/delete-all-the-queues-from-rabbitmq
+
+
+
+Tested and worked
+Actually super easy with management plugin and policies:
+
+Goto Management Console (localhost:15672)
+
+Goto Admin tab
+
+Goto Policies tab(on the right side)
+
+Add Policy
+
+Fill Fields
+
+Virtual Host: Select
+Name: Expire All Policies(Delete Later)
+Pattern: .*
+Apply to: Queues
+Definition: expires with value 1 (change type from String to Number)
+Save
+
+Checkout Queues tab again
+
+All Queues must be deleted
+
+And don't forget to remove policy!!!!!!.
